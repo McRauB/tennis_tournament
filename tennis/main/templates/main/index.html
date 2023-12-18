@@ -1,13 +1,21 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
     <div class="features">
-        <h1>Главная страница</h1>
+        <h1>{{ title }}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi esse fugiat officia quia quibusdam, quidem quod sequi similique sunt veritatis!</p>
         <button class="btn btn-warning">На страницу INFO</button>
         <a href="/about" class="btn btn-warning">На страницу INFO</a>
+
+        {% for el in values %}
+            {% if el == 'hello' %}
+                <p> {{ el }}</p>
+            {% endif %}
+        {% endfor %}
+
+
     </div>
 {% endblock %}
 
